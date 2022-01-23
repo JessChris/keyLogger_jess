@@ -1,27 +1,27 @@
 #include <iostream>
-#include <windows.h>
-#include <winuser.h> //so I can use the GetAsyncKeyState function
 #include <fstream>
 using namespace std;
 
 //functions used:
-void start();
-void stealth();
+void StartLog(string input);
 
 
 int main()
 {
 	cout << "hello";
+	StartLog("hi");
 }
 
 
-void start()
+void StartLog(string input)
 {
-	char characterInput;
+	fstream DataLog;
+	DataLog.open("data.txt", fstream::app);
 
-	for (;;) //an endless loop
+	if (DataLog.is_open())
 	{
-
+		DataLog << input;
+		DataLog.close();
 	}
 
 }
